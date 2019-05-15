@@ -1,0 +1,75 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h1 {
+	padding-top: 60px;
+	text-align: center;
+	color: #f00ace;
+	font-family: cursive;
+}
+
+.sign_up_form, .sign_in_form, .edit _form{
+	padding-left: 15px;
+	text-align: center;
+}
+
+.field{
+	margin-bottom: 5px; 
+}
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+
+.navbar input {
+	padding: 14px 16px;
+	float: right;
+	height: 30px;
+	margin-top: 8px;
+}
+
+.user {
+  margin-top: 55px;
+}
+
+.col-md-1 {
+  margin-top: 56px;
+  margin-left: 12px;
+}
+
+li {
+  font-size: 18px;
+  list-style-type: none;
+}
+
+.col-md-6 {
+  margin-top: 5px;
+  margin-left: 15px;
+  font-size: 20px;
+}

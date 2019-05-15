@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <div class="navbar">
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <%= link_to "Block list", "#" %>
+        <%= link_to "Message" %>
+        <%= link_to "Edit Profile", edit_user_registration_path %>
+        <%= link_to "Home", users_path %>
+        <!-- <input type="text" placeholder="Search.." name="search"> -->
+      </div>
+    <% else %>
+      <div class="navbar">
+        <%= link_to "Contact", "#" %>
+        <%= link_to "Sign up", new_user_registration_path %>
+        <%= link_to "Sign in", new_user_session_path %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
