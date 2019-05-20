@@ -14,6 +14,9 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'bootstrap-sass', '3.3.7'
 
+gem 'minitest', group: :test
+gem 'minitest-reporters', group: :test
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
@@ -60,6 +63,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :test, :production do
+  gem 'pg','>=1.1.4'
+  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

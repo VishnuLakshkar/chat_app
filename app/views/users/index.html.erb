@@ -1,5 +1,7 @@
 <ul class="user">
 	<% @users.each do |user| %>
-  	<%= render user %>
+		<% unless current_user.is_blocked?(user) or user.is_blocked?(current_user) %>
+			<%= render user %>
+		<% end %>
   <% end %>
 </ul>

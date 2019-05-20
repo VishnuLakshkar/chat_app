@@ -1,14 +1,21 @@
-<div class="row">
-  <div class="col-md-6", style="margin-top: 56px">
+<% if !current_user.is_blocked?(@user) && !@user.is_blocked?(current_user) %>
+  <div style='margin-top: 56px; margin-left: 8px;'>
     Name: <strong><%= @user.name %></strong>
-  </div>
-  <div class="col-md-6">
+    <br>
     Email: <strong><%= @user.email %></strong>
-  </div>
-  <div class="col-md-6">
+    <br>
     Phone: <strong><%= @user.phone_number %></strong>
+    <br>
+    Gender: <strong><%= @user.gender %></strong><br>
+    <% unless current_user == @user %>
+      <div class='block_form'>
+        <%= render 'block', user: @user %>
+        <%= link_to "Message", "#" %>
+      </div>
+    <% end %>
   </div>
-  <div class="col-md-6">
-    Gender: <strong><%= @user.gender %></strong>
+<% else %>
+  <div style='margin-top: 56px; margin-left: 8px;'>
+    <h1><%= @user.name %> blocked</h1>
   </div>
-</div>
+<% end %>

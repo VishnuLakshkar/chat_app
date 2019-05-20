@@ -58,18 +58,20 @@ h1 {
   margin-top: 55px;
 }
 
-.col-md-1 {
-  margin-top: 56px;
-  margin-left: 12px;
-}
-
-li {
+.user_list {
   font-size: 18px;
   list-style-type: none;
+  overflow-x: hidden;
 }
 
-.col-md-6 {
+.show {
   margin-top: 5px;
   margin-left: 15px;
   font-size: 20px;
+}
+
+.block_form {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
 }
