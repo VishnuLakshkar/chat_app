@@ -7,15 +7,15 @@ class User < ApplicationRecord
 
   validates :name, length: { maximum: 25 }
   validates :phone_number, uniqueness: true, 
-						  	numericality: { only_integer: true, message: "should be 10 digits" },
+						  	numericality: { only_integer: true },
 						  	length: { is: 10, message: "Must be 10 digits" }
 
   # Block Unblock relationship
-	has_many :blocked_relationships, class_name: "BlockRelationship", 
+	has_many :blocked_relationships, class_name: "Relationship", 
             foreign_key: "blocked_id", dependent: :destroy
   has_many :blockers, through: :blocked_relationships, source: :blocker
 
-  has_many :blocker_relationships, class_name: "BlockRelationship", 
+  has_many :blocker_relationships, class_name: "Relationship", 
             foreign_key: "blocker_id", dependent: :destroy
   has_many :blockeds, through: :blocker_relationships, source: :blocked
 
@@ -29,5 +29,6 @@ class User < ApplicationRecord
 
   def is_blocked?(other_user)
   	blockers.include?(other_user)
+    # Make a query
   end
 end

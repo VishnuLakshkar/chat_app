@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get :blocked_user 
+      get :block_list
     end
   end
 
-  resources :block_relationships, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end

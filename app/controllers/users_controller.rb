@@ -9,9 +9,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 	end
 
-	def blocked_user
+	def block_list
     @user  = User.find(params[:id])
     @users = @user.blockers
-    render 'block_list'
   end
 end

@@ -1,4 +1,4 @@
-class BlockRelationshipsController < ApplicationController
+class RelationshipsController < ApplicationController
 	def create
 		user = User.find(params[:blocker_id])
 		current_user.block(user)
@@ -6,7 +6,8 @@ class BlockRelationshipsController < ApplicationController
 	end
 
 	def destroy
-  	user = BlockRelationship.find(params[:id]).blocker
+		# Change model name (Relationship)
+  	user = Relationship.find(params[:id]).blocker
 		current_user.unblock(user)
 		redirect_to user
 	end
