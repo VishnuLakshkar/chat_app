@@ -6,7 +6,6 @@ class RelationshipsController < ApplicationController
 	end
 
 	def destroy
-		# Change model name (Relationship)
   	user = Relationship.find(params[:id]).blocker
 		current_user.unblock(user)
 		redirect_to user
