@@ -1,0 +1,10 @@
+<div class="col-md-6">
+	<li class='conversated_name', style="font-size: medium;">
+		<%= link_to message.user.name, user_path(message.user_id) %>
+	</li>
+</div>
+<div class="col-md-6">
+	<li class='conversated_message', style="font-size: medium;">
+		<%= message.body %>
+	</li>
+</div>

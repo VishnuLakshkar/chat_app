@@ -1,6 +1,5 @@
 class Message < ApplicationRecord
+	default_scope { order(created_at: :desc) }
 	belongs_to :user
-	belongs_to :conversation
-
-	validates :body, :user_id, :conversation_id, presence: true
+  belongs_to :conversation	
 end

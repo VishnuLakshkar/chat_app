@@ -1,0 +1,15 @@
+<div class="container", style="margin-top: 56px;">
+	<div class="row", style="overflow-x: hidden;">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+			<ul class="conversations", style="list-style-type: none;">
+				<% @conversated_users.each do |conversated_user| %>
+					<% unless current_user.is_blocked?(conversated_user) || conversated_user.is_blocked?(current_user) %>
+						<%= render 'conversated_user', conversated_user: conversated_user %>
+					<% end %>
+			  <% end %>
+			</ul>
+		</div>
+	</div>
+</div>

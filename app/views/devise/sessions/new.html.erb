@@ -3,7 +3,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "sign_in_form"}) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: "Email", required: true %>
+    <%= f.email_field :email, placeholder: "Email", required: true %>
   </div>
 
   <div class="field">

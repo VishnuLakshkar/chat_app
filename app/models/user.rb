@@ -28,7 +28,6 @@ class User < ApplicationRecord
   end
 
   def is_blocked?(other_user)
-  	blockers.include?(other_user)
-    # Make a query
+  	blockers.exists?(other_user.id)
   end
 end

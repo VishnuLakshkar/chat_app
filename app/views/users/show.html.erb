@@ -1,5 +1,5 @@
 <% if !current_user.is_blocked?(@user) && !@user.is_blocked?(current_user) %>
-  <div style='margin-top: 56px; margin-left: 8px;'>
+  <div style='margin-top: 56px; margin-left: 10px;'>
     <div>
       Name: <strong><%= @user.name %></strong>
     </div>
@@ -10,7 +10,7 @@
       Phone: <strong><%= @user.phone_number %></strong>
     </div>
     <div>
-      Gender: <strong><%= @user.gender %></strong><br>
+      Gender: <strong><%= @user.gender %></strong>
     </div>
     <% unless current_user == @user %>
       <div class='block_form'>

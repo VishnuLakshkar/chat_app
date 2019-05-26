@@ -1,0 +1,5 @@
+<% unless current_user == conversated_user %>
+	<li class='conversated_user_list', style="font-size: medium;">
+		<%= link_to conversated_user.name, conversation_messages_path(conversation_id: Conversation.get(conversated_user, current_user).id) %>
+	</li>
+<% end %>

@@ -1,0 +1,16 @@
+<div class="container", style="margin-top: 56px;">
+	<div class="row">
+		<%= form_for [@conversation, @conversation.messages.build] do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.text_area :body, class: "form-control" %>
+      <%= f.submit "Send", class: "btn btn-success" %>
+    <% end %>
+	</div>
+	<div class="row", style="overflow-x: hidden;">
+		<ul class="message", style="list-style-type: none;">
+			<% @messages.each do |message| %>
+				<%= render 'message_list', message: message %>
+		  <% end %>
+		</ul>
+	</div>
+</div>
