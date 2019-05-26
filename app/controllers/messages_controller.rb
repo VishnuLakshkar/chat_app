@@ -11,7 +11,6 @@ class MessagesController < ApplicationController
 
 	def create
 		@conversation = Conversation.includes(:recipient).find(params[:conversation_id])
-    # @message = @conversation.messages.build(message_params)
     if !params[:message][:body].blank?
     	@message = @conversation.messages.create(message_params)
     else
@@ -21,7 +20,7 @@ class MessagesController < ApplicationController
 	end
 
 	private
-	def message_params
-    params.require(:message).permit(:user_id, :body)
-  end
+  	def message_params
+      params.require(:message).permit(:user_id, :body)
+    end
 end

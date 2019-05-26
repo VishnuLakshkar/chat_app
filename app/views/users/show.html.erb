@@ -15,7 +15,7 @@
     <% unless current_user == @user %>
       <div class='block_form'>
         <%= render 'block', user: @user %>
-        <%= link_to "Message", "#" %>
+        <%= link_to "Message", conversation_messages_path(Conversation.get(@user, current_user)) %>
       </div>
     <% end %>
   </div>

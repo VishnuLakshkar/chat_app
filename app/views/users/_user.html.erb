@@ -5,7 +5,7 @@
 	  		<%= link_to user.name, user %>
 	  	</div>
 	  	<div class="col-md-3">
-    		<%= link_to "Message", conversation_messages_path(conversation_id: Conversation.get(user, current_user).id) %>
+    		<%= link_to "Message", conversation_messages_path(Conversation.get(user, current_user)) %>
 	  	</div>
 	  	<div class="col-md-3">
     		<%= render 'block', user: user %>
